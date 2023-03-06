@@ -26,9 +26,15 @@ const userReview = async (movieId,reviewData,userId) => {
   return movieRecord;
 };
 
+const fetchOwnMovie = async(createdBy)=>{
+    console.log("userId is:",createdBy);
+    const movieRecord = await Movie.find(createdBy);
+
+    return movieRecord;
+}
 
 module.exports = {
     createMovie,
     userReview,
-    // fetchOwnMovie,
+    fetchOwnMovie,
 }

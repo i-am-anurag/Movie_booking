@@ -11,17 +11,15 @@ const movieSchema = new mongoose.Schema({
         required: true,
     },
     yearOfMovie: {
-        type: String,
+        type: Number,
         required: true,
     },
     Director: {
-        // type: mongoose.Types.ObjectId,
-        type: String,
+        type: mongoose.Types.ObjectId,
         required: true,
     },
     MovieCasts: {
-        // type: [mongoose.Types.ObjectId],
-        type: [String],
+        type: [mongoose.Types.ObjectId],
         required: true,
     },
     review:[{
