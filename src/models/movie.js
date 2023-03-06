@@ -15,21 +15,28 @@ const movieSchema = new mongoose.Schema({
         required: true,
     },
     Director: {
+        // type: mongoose.Types.ObjectId,
         type: String,
         required: true,
     },
     MovieCasts: {
+        // type: [mongoose.Types.ObjectId],
         type: [String],
         required: true,
     },
-    review:{
+    review:[{
         comment:{
             type: String,
+            default:null
         },
         rating:{
             type:Number,
+            default: 0,
         },
-    },
+        respondTime:{
+            type: Date,
+        }
+    }],
     releaseDate:{
         type: Date,
     }

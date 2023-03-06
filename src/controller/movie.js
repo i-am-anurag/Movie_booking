@@ -7,6 +7,15 @@ const createMovie = asyncHandler(async(req,res)=>{
     return res.CREATED(response);
 });
 
+const userReview = asyncHandler(async(req,res)=>{
+    const requestData = {...req.body,...req.params};
+    const userId = req.user.id;
+    const response = await movieService.userReview(requestData.id,requestData,userId);
+
+    return res.OK(response);
+});
+
 module.exports = {
     createMovie,
+    userReview,
 }
