@@ -5,7 +5,7 @@ mongoose.set('strictQuery',true);
 dotenv.config();
 
 const connect = async ()=> {
-    await mongoose.connect('mongodb://localhost/Movie_booking');
+    await mongoose.connect('mongodb://mongo:27017/Movie_booking');
 }
 
 module.exports = {

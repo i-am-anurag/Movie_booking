@@ -1,0 +1,19 @@
+version: "3"
+services:
+  mongo:
+    image: mongo
+    ports: 
+    - "27017:27017"
+    restart: always
+
+  node-app:
+    restart: always
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    build: .
+    ports: 
+    - "3012:3012"
+    links: 
+    - mongo
+    command: npm start

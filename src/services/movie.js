@@ -19,6 +19,7 @@ const userReview = async (movieId,reviewData,userId) => {
     comment: reviewData.comment,
     rating: reviewData.rating,
     respondTime: new Date(),
+    userId:userId,
   });
 
   await movieRecord.save();
@@ -27,8 +28,7 @@ const userReview = async (movieId,reviewData,userId) => {
 };
 
 const fetchOwnMovie = async(createdBy)=>{
-    console.log("userId is:",createdBy);
-    const movieRecord = await Movie.find(createdBy);
+    const movieRecord = await Movie.find(createdBy).populate('MovieCasts');
 
     return movieRecord;
 }

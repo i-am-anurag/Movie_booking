@@ -19,7 +19,9 @@ const movieSchema = new mongoose.Schema({
         required: true,
     },
     MovieCasts: {
-        type: [mongoose.Types.ObjectId],
+        type: [
+            {type: mongoose.Types.ObjectId,
+            ref:"Celebrity"}],
         required: true,
     },
     review:[{
@@ -33,6 +35,9 @@ const movieSchema = new mongoose.Schema({
         },
         respondTime:{
             type: Date,
+        },
+        userId:{
+            type: mongoose.Types.ObjectId,
         }
     }],
     releaseDate:{

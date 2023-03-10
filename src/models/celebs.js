@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
 const celebritySchema = new mongoose.Schema({
-   createdBy:{
-    type:mongoose.Types.ObjectId,
-    ref:"User",
-  },
   Name: {
     type: String,
     required: true,
